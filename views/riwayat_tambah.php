@@ -1,4 +1,10 @@
+<?php 
+// ini proses ambil data barang dari database, lalud ata yang didapat dimasukan ke $query
+$sql = "SELECT * FROM barang";
+$query = mysqli_query($koneksi, $sql) or die("SQL Anda Salah");
+$nomor = 0;
 
+?>
 
 <div class="container">
     <div class="row">
@@ -26,7 +32,20 @@
                         <div class="form-group">
                             <label for="nama_barang" class="col-sm-3 control-label">Nama Barang</label>
                             <div class="col-sm-9">
-                                <input type="text" name="nama_barang" class="form-control" id="inputEmail3" placeholder="Nama Barang">
+                                <select name="nama_barang" class="form-control" id="inputEmail3">
+                                    <option value="">Pilih Nama Barang:</option>
+
+                                    <!-- proses perulangan untuk menampilkan semua data dalam $query -->
+                                    <?php while ($data = mysqli_fetch_array($query)) { 
+                                        $nomor++;
+                                    ?>
+                                        <option value="<?php echo $data['nama_barang']?>"><?php echo $data['nama_barang']?></option>
+                                    <?php } ?>
+                                    
+                                </select>
+
+                                <!-- v1 -->
+                                <!-- <input type="text" name="nama_barang" class="form-control" id="inputEmail3" placeholder="Nama Barang"> -->
                             </div>
                         </div>
 						<div class="form-group">
