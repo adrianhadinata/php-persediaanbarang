@@ -23,5 +23,4 @@ if($jumlahdata > 0){
     header("location:index_admin.php", true);
 }else{
     echo "<script> window.location.assign('index.php?error=yes');</script>";
-
 }

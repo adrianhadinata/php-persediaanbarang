@@ -8,17 +8,8 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <!--colomn kedua-->
-        <div class="col-sm-9 col-xs-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title"> CV. Global Karunia Technology</h3>
-                </div>
-            </div>
-        </div>
-        <!--akhir colomn kedua-->
-        <div class="col-sm-3 col-xs-12">
+    <div class="row" style="display:flex; justify-content:center;">
+        <div class="col-sm-4 col-xs-12 text-center">
             <!--Jika terjadi login error tampilkan pesan ini-->
             <?php if(isset($_GET['error']) ) {?>
             <div class="alert alert-danger">Maaf! Login Gagal, Coba Lagi..</div>
@@ -36,6 +27,7 @@
                     <h3 class="panel-title">Masuk Ke Sistem</h3>
                 </div>
                 <div class="panel-body">
+                    <!-- proses login, memngirim inputan ke proses_login.php -->
                     <form class="form-horizontal" action="proses_login.php" method="post">
                         <div class="form-group">
                             <div class="col-sm-12">

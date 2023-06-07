@@ -80,7 +80,7 @@ require 'config/koneksi.php'; ?>
 
 <body>
 
-    <?php //mengambil file menu.php
+    <?php //mengambil file akun.php
     require 'akun.php';
     ?>
 
@@ -88,12 +88,12 @@ require 'config/koneksi.php'; ?>
     require 'menu.php';
     ?>
 
-    <?php //mengambil file menu.php
+    <?php //mengambil file content.php
     require 'content.php';
     ?>
 
 
-    <?php //mengambil file menu.php
+    <?php //mengambil file footer.php
     require 'footer.php';
     ?>
 
@@ -104,7 +104,7 @@ require 'config/koneksi.php'; ?>
 
     <script type="text/javascript">
         $(function() {
-            $('#dtskripsi').dataTable();
+            // $('#dtskripsi').dataTable();
         });
     </script>
 

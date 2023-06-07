@@ -114,7 +114,7 @@ require 'config/koneksi.php'; ?>
 
     <script type="text/javascript">
         $(function() {
-            $('#dtskripsi').dataTable();
+            // $('#dtskripsi').dataTable();
         });
     </script>
 
