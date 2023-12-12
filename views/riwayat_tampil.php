@@ -49,7 +49,7 @@ if (!isset($_SESSION['idsesi'])) {
                                     <td><?= $data['tgl_pesan'] ?></td>
                                     <td><?= $data['tgl_pengemasan'] ?></td>
                                     <td><?= $data['jumlah_barang'] ?> unit</td>
-                                    <td><?= $data['estimasi_pengiriman'] ?> hari</td>
+                                    <td><?= $data['dikirim'] ?> hari</td>
                                     <td>
                                         <a href="?page=riwayat&actions=detail&id=<?= $data['id'] ?>" class="btn btn-info btn-xs">
                                             <span class="fa fa-eye"></span>
