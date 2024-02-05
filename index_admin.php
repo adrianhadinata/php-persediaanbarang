@@ -91,20 +91,19 @@ require 'config/koneksi.php'; ?>
 <body>
 
     <?php //mengambil file menu.php
-    require 'akun.php';
+    require 'views/templates/akun.php';
     ?>
 
     <?php //mengambil file menu.php
-    require 'menu.php';
+    require 'views/templates/menu.php';
     ?>
 
     <?php //mengambil file menu.php
-    require 'content_admin.php';
+    require 'views/templates/content_admin.php';
     ?>
 
-
     <?php //mengambil file menu.php
-    require 'footer.php';
+    require 'views/templates/footer.php';
     ?>
 
     <script src="Assets/js/jquery.js" type="text/javascript"></script>

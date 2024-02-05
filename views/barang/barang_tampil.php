@@ -1,5 +1,5 @@
 <?php
-if(!isset($_SESSION ['idsesi'])) {
+if (!isset($_SESSION['idsesi'])) {
     echo "<script> window.location.assign('../index.php'); </script>";
 }
 ?>
@@ -15,15 +15,21 @@ if(!isset($_SESSION ['idsesi'])) {
                     <table id="dtskripsi" class="table table-bordered table-striped table-hover">
                         <thead>
                             <tr>
-                                <th>No.</th><th>Kode</th><th>Nama Barang</th><th>Jenis</th><th>Satuan</th><th>Stok</th><th>ACTIONS</th>
+                                <th>No.</th>
+                                <th>Kode</th>
+                                <th>Nama Barang</th>
+                                <th>Jenis</th>
+                                <th>Satuan</th>
+                                <th>Stok</th>
+                                <th>Gambar</th>
+                                <th>ACTIONS</th>
                             </tr>
                         </thead>
                         <tbody>
                             <!--ambil data dari database, dan tampilkan kedalam tabel-->
                             <?php
                             //buat sql untuk tampilan data, gunakan kata kunci select
-                            $sql = "SELECT * FROM barang";
-                            $query = mysqli_query($koneksi, $sql) or die("SQL Anda Salah");
+                            $query = mysqli_query($koneksi, read()) or die("SQL Anda Salah");
                             //Baca hasil query dari databse, gunakan perulangan untuk 
                             //Menampilkan data lebh dari satu. disini akan digunakan
                             //while dan fungdi mysqli_fecth_array
@@ -32,14 +38,15 @@ if(!isset($_SESSION ['idsesi'])) {
                             //Melakukan perulangan u/menampilkan data
                             while ($data = mysqli_fetch_array($query)) {
                                 $nomor++; //Penambahan satu untuk nilai var nomor
-                                ?>
+                            ?>
                                 <tr>
                                     <td><?= $nomor ?></td>
                                     <td><?= $data['kode'] ?></td>
-									<td><?= $data['nama_barang'] ?></td>
-									<td><?= $data['jenis'] ?></td>
-									<td><?= $data['satuan'] ?></td>
+                                    <td><?= $data['nama_barang'] ?></td>
+                                    <td><?= $data['jenis'] ?></td>
+                                    <td><?= $data['satuan'] ?></td>
                                     <td><?= $data['stok'] ?></td>
+                                    <td style="text-align: center;"><img src="<?php echo strlen($data['gambar']) !== 0 ? 'Assets/uploads/' . $data['gambar'] : 'https://placehold.co/100x100' ?>" placeholder="<?= $data['nama_barang'] ?>" style="width: 100px; height: 100px;"></td>
                                     <td>
                                         <a href="?page=barang&actions=detail&id=<?= $data['id'] ?>" class="btn btn-info btn-xs">
                                             <span class="fa fa-eye"></span>
@@ -60,7 +67,6 @@ if(!isset($_SESSION ['idsesi'])) {
                                 <td colspan="7">
                                     <a href="?page=barang&actions=tambah" class="btn btn-info btn-sm">
                                         Tambah Data Barang
-
                                     </a>
                                 </td>
                             </tr>
@@ -72,4 +78,3 @@ if(!isset($_SESSION ['idsesi'])) {
         </div>
     </div>
 </div>
-

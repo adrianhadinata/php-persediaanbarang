@@ -24,7 +24,7 @@
                             <!--ambil data dari database, dan tampilkan kedalam tabel-->
                             <?php
                             //buat sql untuk tampilan data, gunakan kata kunci select
-                            $sql = "SELECT * FROM riwayat";
+                            $sql = "SELECT riwayat.id, riwayat.kode, riwayat.nama_customer, barang.nama_barang, riwayat.tgl_pesan, riwayat.tgl_pengemasan, riwayat.dikirim, riwayat.estimasi FROM riwayat JOIN barang ON barang.id = riwayat.id_barang";
                             $query = mysqli_query($koneksi, $sql) or die("SQL Anda Salah");
                             //Baca hasil query dari databse, gunakan perulangan untuk
                             //Menampilkan data lebh dari satu. disini akan digunakan
@@ -42,8 +42,8 @@
                                     <td><?= $data['nama_barang'] ?></td>
                                     <td><?= $data['tgl_pesan'] ?></td>
                                     <td><?= $data['tgl_pengemasan'] ?></td>
-                                    <td><?= $data['jumlah_barang'] ?> unit</td>
-                                    <td><?= $data['dikirim'] ?> hari</td>
+                                    <td><?= $data['dikirim'] ?> unit</td>
+                                    <td><?= $data['estimasi'] ?> hari</td>
                                     <td>
                                         <a href="report/riwayat_satu.php?id=<?= $data['id'] ?>" target="_blank" class="btn btn-info btn-xs">
                                             <span class="fa fa-print"></span>

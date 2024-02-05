@@ -8,41 +8,48 @@
                 <div class="panel-body">
                     <!--Menampilkan data detail arsip-->
                     <?php
-                    $sql = "SELECT *FROM riwayat WHERE id='" . $_GET ['id'] . "'";
+                    $sql = "SELECT riwayat.id, riwayat.kode, riwayat.nama_customer, barang.nama_barang, riwayat.tgl_pesan, riwayat.tgl_pengemasan, riwayat.dikirim, riwayat.estimasi FROM riwayat JOIN barang ON barang.id = riwayat.id_barang WHERE riwayat.id='" . $_GET['id'] . "'";
                     //proses query ke database
                     $query = mysqli_query($koneksi, $sql) or die("SQL Detail error");
                     //Merubaha data hasil query kedalam bentuk array
                     $data = mysqli_fetch_array($query);
-                    ?>   
+                    ?>
 
                     <!--dalam tabel--->
-                    <table class="table table-bordered table-striped table-hover"> 
+                    <table class="table table-bordered table-striped table-hover">
                         <tr>
-                            <td width="300">Kode</td> <td><?= $data['kode'] ?></td>
-                        </tr>
-                        <tr>
-                            <td>Nama Customer</td> <td><?= $data['nama_customer'] ?></td>
+                            <td width="300">Kode</td>
+                            <td><?= $data['kode'] ?></td>
                         </tr>
                         <tr>
-                            <td>Nama Barang</td> <td><?= $data['nama_barang'] ?></td>
+                            <td>Nama Customer</td>
+                            <td><?= $data['nama_customer'] ?></td>
                         </tr>
                         <tr>
-                            <td>Tanggal Pesan</td> <td><?= $data['tgl_pesan'] ?></td>
-                        </tr>
-						<tr>
-                            <td>Tanggal Pengemasan</td> <td><?= $data['tgl_pengemasan'] ?></td>
+                            <td>Nama Barang</td>
+                            <td><?= $data['nama_barang'] ?></td>
                         </tr>
                         <tr>
-                            <td>Jumlah Barang</td> <td><?= $data['jumlah_barang'] ?></td>
+                            <td>Tanggal Pesan</td>
+                            <td><?= $data['tgl_pesan'] ?></td>
                         </tr>
                         <tr>
-                            <td>Dikirim</td> <td><?= $data['estimasi_pengiriman'] ?></td>
+                            <td>Tanggal Pengemasan</td>
+                            <td><?= $data['tgl_pengemasan'] ?></td>
                         </tr>
-						
+                        <tr>
+                            <td>Jumlah Barang</td>
+                            <td><?= $data['dikirim'] ?></td>
+                        </tr>
+                        <tr>
+                            <td>Dikirim</td>
+                            <td><?= $data['estimasi'] ?></td>
+                        </tr>
+
                     </table>
-				
+
                 </div> <!--end panel-body-->
-                <!--panel footer--> 
+                <!--panel footer-->
                 <div class="panel-footer">
                     <a href="?page=riwayat&actions=tampil" class="btn btn-success btn-sm">
                         Kembali ke Riwayat Pengiriman Barang </a>
@@ -54,4 +61,3 @@
         </div>
     </div>
 </div>
-
