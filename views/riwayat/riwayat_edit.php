@@ -1,6 +1,6 @@
 <?php
 $id = $_GET['id'];
-$ambil =  mysqli_query($koneksi, "SELECT * FROM riwayat WHERE id='$id'") or die("SQL Edit error");
+$ambil =  mysqli_query($koneksi, read($id)) or die("SQL Edit error");
 $data = mysqli_fetch_array($ambil);
 ?>
 <div class="container">
@@ -51,14 +51,14 @@ $data = mysqli_fetch_array($ambil);
                             <div class="form-group">
                                 <label for="jumlah_barang" class="col-sm-3 control-label">Jumlah Barang</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="jumlah_barang" value="<?= $data['jumlah_barang'] ?>" class="form-control" id="inputEmail3" placeholder="jumlah_barang">
+                                    <input type="text" name="jumlah_barang" value="<?= $data['dikirim'] ?>" class="form-control" id="inputEmail3" placeholder="jumlah_barang">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="estimasi_pengiriman" class="col-sm-3 control-label">Estimasi Pengiriman</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="estimasi_pengiriman" value="<?= $data['dikirim'] ?>" class="form-control" id="inputEmail3" placeholder="estimasi_pengiriman">
+                                    <input type="text" name="estimasi_pengiriman" value="<?= $data['estimasi'] ?>" class="form-control" id="inputEmail3" placeholder="estimasi_pengiriman">
                                 </div>
                             </div>
 
