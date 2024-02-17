@@ -9,3 +9,8 @@ function read($id)
 {
     return "SELECT * FROM riwayat JOIN barang ON barang.id = riwayat.id_barang WHERE riwayat.id='$id'";
 }
+
+function findAll()
+{
+    return "SELECT riwayat.id, riwayat.kode, riwayat.nama_customer, barang.nama_barang, riwayat.tgl_pesan, riwayat.tgl_pengemasan, riwayat.dikirim, riwayat.estimasi FROM riwayat JOIN barang ON barang.id = riwayat.id_barang";
+}

@@ -57,7 +57,7 @@
                         <tfoot>
                             <tr>
                                 <td colspan="9">
-                                    <a href="report/riwayat_semua.php" target="_blank" class="btn btn-info btn-sm">
+                                    <a href="?page=report&actions=semua" target="_blank" class="btn btn-info btn-sm">
                                         <span class="fa fa_print"></span> Cetak Semua Data
 
                                     </a>
@@ -84,7 +84,7 @@
     <div>
         <a href="#" title="Close" class="close">X</a>
 
-        <form target="_blank" action="report/riwayat_perbulan.php" method="post">
+        <form target="_blank" action="controller/report_controller.php" method="post">
             <h4>Pilih bulan </h4>
             <select name="bulan" class="form-control">
                 <option value="12"> Desember </option>
@@ -100,6 +100,7 @@
                 <option value="02"> Februari </option>
                 <option value="01"> Januari </option>
             </select>
+
             <h4>Pilih tahun</h4>
             <select name="tahun" class="form-control">
                 <?php
@@ -108,6 +109,8 @@
                 <?php }
                 ?>
             </select>
+
+            <input type="hidden" value="perbulan" name="action">
 
             <button type="submit">OK</button>
         </form>
@@ -118,7 +121,7 @@
     <div>
         <a href="#" title="Close" class="close">X</a>
 
-        <form target="_blank" action="report/riwayat_pertahun.php" method="post">
+        <form target="_blank" action="controller/report_controller.php" method="post">
             <h4>Pilih tahun</h4>
             <select name="tahun" class="form-control">
                 <?php
@@ -127,6 +130,8 @@
                 <?php  }
                 ?>
             </select>
+
+            <input type="hidden" value="pertahun" name="action">
 
             <button type="submit">OK</button>
         </form>
