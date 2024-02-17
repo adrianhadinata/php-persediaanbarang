@@ -30,7 +30,7 @@ if (!isset($_SESSION['idsesi'])) {
                             <!--ambil data dari database, dan tampilkan kedalam tabel-->
                             <?php
                             //buat sql untuk tampilan data, gunakan kata kunci select
-                            $query = mysqli_query($koneksi, $sql) or die("SQL Anda Salah");
+                            $query = mysqli_query($koneksi, findAll()) or die("SQL Anda Salah");
                             //Baca hasil query dari databse, gunakan perulangan untuk
                             //Menampilkan data lebh dari satu. disini akan digunakan
                             //while dan fungdi mysqli_fecth_array
