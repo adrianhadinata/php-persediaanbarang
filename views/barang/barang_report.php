@@ -43,7 +43,7 @@
                                     <td><?= $data['stok'] ?></td>
 
                                     <td>
-                                        <a href="report/barang_satu.php?id=<?= $data['id'] ?>" target="_blank" class="btn btn-info btn-xs">
+                                        <a href="?page=report&actions=satu&id=<?= $data['id'] ?>" target="_blank" class="btn btn-info btn-xs">
                                             <span class="fa fa-print"></span>
                                         </a>
 
@@ -56,7 +56,7 @@
                         <tfoot>
                             <tr>
                                 <td colspan="9">
-                                    <a href="report/barang_semua.php" target="_blank" class="btn btn-info btn-sm">
+                                    <a href="?page=report&actions=semua_barang" target="_blank" class="btn btn-info btn-sm">
                                         <span class="fa fa_print"></span> Cetak Semua Data
 
 

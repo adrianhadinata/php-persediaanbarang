@@ -45,7 +45,7 @@
                                     <td><?= $data['dikirim'] ?> unit</td>
                                     <td><?= $data['estimasi'] ?> hari</td>
                                     <td>
-                                        <a href="report/riwayat_satu.php?id=<?= $data['id'] ?>" target="_blank" class="btn btn-info btn-xs">
+                                        <a href="?page=report&actions=satu_riwayat&id=<?= $data['id'] ?>" target="_blank" class="btn btn-info btn-xs">
                                             <span class="fa fa-print"></span>
                                         </a>
 
